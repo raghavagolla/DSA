@@ -1,0 +1,9 @@
+from array import *
+arraytest = array('i',[-1,-1,-2,1,1,-2,2])
+sum = 0
+for x in range(0,len(arraytest)):
+ for y in range(x+1,len(arraytest)):
+  sumofarray = arraytest[x]+arraytest[y]
+  ##print(sumofarray)
+  if arraytest[x] + arraytest[y] == sum:
+   print('Pair found', (arraytest[x], arraytest[y]))
