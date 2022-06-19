@@ -1,37 +1,47 @@
 # write your code here...
 #Given an integer array nums sorted in non-decreasing order, remove the duplicate-place such that each unique element appears only once. The relative order of the elements should be kept the same.
 array = [1,2,3,3,4,5] [1][1][1][3][3][4][5] ==> [1][3][4][5][][][]
-[0][0][1][3][4][3][3][4]
- |  |
+sol :
+def ispresent(arr):
+    n = len(arr)
+    Temp = [0]*n
+    pivot = 0
+    for i in range(0,n-1):
+        if arr[i]!= arr[i+1]:
+            Temp[pivot] = arr[i]
+            pivot = pivot +1
+    Temp[pivot] = arr[n-1]
+    return Temp[0:pivot+1]
 
-[1][3][4][5][null][null][null]
-          \                   \ 
-
-Sorted Set [1,3,4,5]
-
-[1][3][1][1][3][3] ==> [1][3]
-|               |
+arr = [1,2,2,3,4]
+print(ispresent(arr))
 
 
 # Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
-a = [1,2,4,2,1,3]
-duplicate = a[0] 1
-for i in range(0,6)
- for j in range(1,6)
- if (a[i]= a[j])
-    return true;
-    
-    
- duplicate = a[i]
-duplicate = a[]
-count = count +1
+def isrepeated(self,arr):
+    n = len(arr)
+    print(n)
+    count = 0
+    for i in range(n):
+        for j in range(i+1,n):
+            if arr[i] == arr[j]:
+                return True
+    return False
 
 #You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's. Increment the large integer by one and return the resulting array of digits
 
-Given = [1,2,3]
+def plusone(arr):
+    n = len(arr)
+    for i in reversed(range(n)):
+            print (arr[i])
+            arr[i]= arr[i]+1
+            if arr[i] <= 9:
+                return(arr)
+            else:
+                arr[i] = 0
+    arr.insert(0,1)
+    return(arr)
 
-Result = [1,2,4]
-
-[1,2,9] +1 = [1,3,0]
-[9] + 1 = [1, 0]
+arr = [1,2,3]
+print(plusone(arr))
